@@ -56,6 +56,10 @@ Eg - <code> /lyrics Dandelions </code>`)
   }
 })
 
+bot.on( 'message' , xaria => {
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
+})
+
 bot.launch()
 
 process.once('SIGINT', () => bot.stop('SIGINT'))
