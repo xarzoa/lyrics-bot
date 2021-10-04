@@ -6,7 +6,7 @@ const logger = createLogger({
     format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss'
     }),
-    format.printf(info => `${info.timestamp} ${info.level}: ${info.message} ${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
+    format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
   ),
   transports: [
     new transports.Console()
