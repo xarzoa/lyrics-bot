@@ -1,18 +1,21 @@
 const { Telegraf } = require('telegraf')
 const Genius = require('genius-lyrics')
 const commands = require('./helpers/commands')
+const logger = require('./helpers/logger')
 
 const Client = new Genius.Client(process.env.GENIUS)
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 
-bot.start( xaria =>{
-  console.log(xaria.update.message.from.first_name)
+
+bot.start( xaria =>{ logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
   xaria.replyWithHTML(`Hi! <b> <a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a> </b> 
 
 I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)})
 
-bot.help(xaria => xaria.replyWithHTML(`I'm <b>${xaria.botInfo.first_name}</b>
+bot.help(xaria =>{  
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
+  xaria.replyWithHTML(`I'm <b>${xaria.botInfo.first_name}</b>
 
 A simple lyrics bot made by using <b> Nodejs, Telegraf, GENIUS</b>
 
@@ -22,9 +25,10 @@ A simple lyrics bot made by using <b> Nodejs, Telegraf, GENIUS</b>
 <code> /help </code> - Get this msg
 
 Join <b> @CatBio </b>
-`))
+`)})
 
 bot.command( commands.lyrics , async xaria => {
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
   const msg = xaria.message.text.split(`/${commands.lyrics}`)
   console.log(msg)
   if(msg[1] == ''){

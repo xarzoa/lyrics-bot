@@ -12,6 +12,7 @@
   "dependencies": {
     "genius-lyrics": "^4.2.9",
     "genius-lyrics-api": "^3.2.0",
-    "telegraf": "^4.4.2"
+    "telegraf": "^4.4.2",
+    "winston": "^3.3.3"
   }
 }
