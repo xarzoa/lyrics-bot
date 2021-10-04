@@ -8,7 +8,9 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.start( xaria =>{
   console.log(xaria.update.message.from.first_name)
-  xaria.replyWithHTML(`Hi! <a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a> <b>A Simple <i> Nodejs </i> Lyrics bot.</b>`)})
+  xaria.replyWithHTML(`Hi! <b> <a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a> </b> 
+
+I'm a simple <i> Nodejs </i> Lyrics bot.`)})
 
 bot.help(xaria => xaria.replyWithHTML(`I'm <b>${xaria.botInfo.first_name}</b>
 
