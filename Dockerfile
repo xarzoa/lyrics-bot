@@ -10,4 +10,4 @@ COPY . .
 
 ARG EnvironmentVariable
 
-CMD ["node" , "index.js"]
+CMD ["node" , "bot.js"]
