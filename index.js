@@ -1,8 +1,8 @@
 const { Telegraf } = require('telegraf')
-const Genius = require("genius-lyrics")
+const Genius = require('genius-lyrics')
+const commands = require('./helpers/commands')
 
-
-const Client = new Genius.Client(process.env.GENIUS);
+const Client = new Genius.Client(process.env.GENIUS)
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 
@@ -24,11 +24,10 @@ A simple lyrics bot made by using <b> Nodejs, Telegraf, GENIUS</b>
 Join <b> @CatBio </b>
 `))
 
-bot.command( `lyrics` , async xaria => {
-  console.log(xaria.message.text)
-  const msg = xaria.message.text.split('/lyrics')
-
-  if(msg[1] == undefined){
+bot.command( commands.lyrics , async xaria => {
+  const msg = xaria.message.text.split(`/${commands.lyrics}`)
+  console.log(msg)
+  if(msg[1] == ''){
     xaria.replyWithHTML(` <b> Error ! 😐🖐️ </b> You typed nothing!😅
 
 Type song name after the command.
