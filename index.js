@@ -28,7 +28,7 @@ bot.command( `lyrics` , async xaria => {
   console.log(xaria.message.text)
   const msg = xaria.message.text.split('/lyrics')
 
-  if(msg[0] == undefined){
+  if(msg[1] == undefined){
     xaria.replyWithHTML(` <b> Error ! 😐🖐️ </b> You typed nothing!😅
 
 Type song name after the command.
