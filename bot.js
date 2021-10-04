@@ -54,7 +54,7 @@ Eg - <code> /lyrics Dandelions </code>`)
 
 <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
-<code>${lyrics.length > 4096 ? 'This lyrics is too big to handle. I found ' + lyrics.length + 'characters on this lyrics. Telegram only support upto 4096 characters per msg' : lyrics } </code>`);
+<code>${lyrics.length > 4096 ? 'This lyrics is too big to handle. I found ' + lyrics.length + ' characters on this lyrics. Telegram only support upto 4096 characters per msg' : lyrics } </code>`);
     }catch(err){
       if(err){
         xaria.reply(`Nothing found. 💔`)
