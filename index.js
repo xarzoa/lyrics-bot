@@ -36,17 +36,24 @@ Type song name after the command.
 Eg - <code> /lyrics Dandelions </code>`)
   }
   else{
-    const searches = await Client.songs.search(msg[1])
+    try{
+      const searches = await Client.songs.search(msg[1])
+console.log(searches)
     const firstSong = searches[0];
 console.log(firstSong);
     const lyrics = await firstSong.lyrics();
+    console.log(firstSong.lyrics)
 xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 <b>by ${firstSong.raw.primary_artist.name} </b>
 
 <code>${lyrics} </code>`);
+    }catch(err){
+      if(err){
+        xaria.reply(`Nothing found. 💔`)
+      }
+    }
   }
 })
-
 
 bot.launch()
 
