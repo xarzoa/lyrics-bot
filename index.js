@@ -30,7 +30,6 @@ Join <b> @CatBio </b>
 bot.command( commands.lyrics , async xaria => {
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
   const msg = xaria.message.text.split(`/${commands.lyrics}`)
-  console.log(msg)
   if(msg[1] == ''){
     xaria.replyWithHTML(` <b> Error ! 😐🖐️ </b> You typed nothing!😅
 
@@ -47,9 +46,11 @@ Eg - <code> /lyrics Dandelions </code>`)
 <b>by ${firstSong.raw.primary_artist.name} </b>
 
 <code>${lyrics} </code>`);
+      logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${firstSong.raw.full_title}}`)
     }catch(err){
       if(err){
         xaria.reply(`Nothing found. 💔`)
+        logger.error('Error' + err)
       }
     }
   }
