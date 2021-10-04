@@ -38,12 +38,9 @@ Eg - <code> /lyrics Dandelions </code>`)
   else{
     try{
       const searches = await Client.songs.search(msg[1])
-console.log(searches)
-    const firstSong = searches[0];
-console.log(firstSong);
-    const lyrics = await firstSong.lyrics();
-    console.log(firstSong.lyrics)
-xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+      const firstSong = searches[0];
+      const lyrics = await firstSong.lyrics();
+      xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 <b>by ${firstSong.raw.primary_artist.name} </b>
 
 <code>${lyrics} </code>`);
