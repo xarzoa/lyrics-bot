@@ -55,6 +55,12 @@ Eg - <code> /lyrics Dandelions </code>`)
     }
   }
 })
+bot.on('sticker', xaria => {
+  xaria.reply(`What are you doing here?
+
+I'm not your girlfriend! This is fuckin bull💩`)
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Sticker`)
+})
 
 bot.on( 'message' , xaria => {
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
