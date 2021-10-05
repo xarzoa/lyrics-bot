@@ -58,7 +58,7 @@ Eg - <code> /lyrics Dandelions </code>`)
     }catch(err){
       if(err){
         xaria.reply(`Nothing found. 💔`)
-        logger.error(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${err}`)
+        logger.error(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text} ${err}`)
       }
     }
   }
