@@ -7,6 +7,7 @@
 - Simple and Fast 
 - Simple deployment
 - Fully customisable (If you know code editing)
+- You don't need to add commands manually
 
 
 ### Deploy on railway
