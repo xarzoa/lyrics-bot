@@ -7,8 +7,6 @@ const config = {
 }
 
 if (config.bot && config.genius && config.channel === ''){
-  logger.info('noice moment')
-}else{
   logger.error('Some Environmental variables are empty')
 }
 
