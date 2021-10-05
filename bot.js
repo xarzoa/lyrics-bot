@@ -23,7 +23,7 @@ bot.telegram.setMyCommands([
       },
       {
         command: commands.rickroll,
-        description: 'Like surprises'
+        description: 'Like surprises?'
       }
 ])
 
