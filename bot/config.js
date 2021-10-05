@@ -6,10 +6,10 @@ const config = {
   channel: process.env.CHANNEL_ID ? process.env.CHANNEL_ID : logger.error(`CHANNEL_ID undefined`)
 }
 
-if (config.bot && config.genius && config.channel){
+if (config.bot && config.genius && config.channel === ''){
   logger.info('noice moment')
 }else{
-  logger.error('Enter config or add .env file to ./bot')
+  logger.error('Some Environmental variables are empty')
 }
 
 module.exports = config
