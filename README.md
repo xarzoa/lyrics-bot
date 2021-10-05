@@ -67,3 +67,11 @@ docker build . -t lyricsbot
 ```
 docker run lyricsbot
 ```
+### Thanks
+
+- Telegraf
+- Me
+- My brain ( Bruh )
+- Replit
+- Rick Astley ( to be part of my bot )
+- You ( for your star )
