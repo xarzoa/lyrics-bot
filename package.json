@@ -1,7 +1,7 @@
 {
   "name": "telegram-lyrics-bot",
   "version": "1.0.1",
-  "description": "A simple nodejs telegram bot",
+  "description": "A simple telegram lyrics bot",
   "main": "bot/bot.js",
   "scripts": {
     "run": "bot/bot.js"

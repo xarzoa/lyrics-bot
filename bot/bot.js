@@ -12,19 +12,19 @@ const channelId = config.channel
 bot.telegram.setMyCommands([
       {
         command: 'start',
-        description:'Start message (don\'t do dis) '
+        description: commands.startDescription
       },
       {
         command: 'help',
-        description: 'Need help?'
+        description: commands.helpDescription
       },
       {
         command: commands.lyrics,
-        description: 'Find lyrics'
+        description: commands.lyricsDescription
       },
       {
         command: commands.rickroll,
-        description: 'Like surprises?'
+        description: commands.rickrollDescription
       }
 ])
 
@@ -136,4 +136,4 @@ bot.launch()
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
 
-//Reading respect ++ btw don't steal ma code :( 
+// Reading respect ++ btw don't steal ma code! mom ... he/she robbed my code :( 

@@ -2,7 +2,7 @@ const { format, createLogger, transports } = require('winston');
 
 const logger = createLogger({
   format: format.combine(
-    format.label({ label: '[my-label]' }),
+    format.label({ label: '[log]' }),
     format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss'
     }),
