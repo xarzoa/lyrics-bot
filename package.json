@@ -2,9 +2,9 @@
   "name": "telegram-lyrics-bot",
   "version": "1.0.1",
   "description": "A simple nodejs telegram bot",
-  "main": "bot.js",
+  "main": "bot/bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "bot/bot.js"
   },
   "keywords": [],
   "author": "d4rk",

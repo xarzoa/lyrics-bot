@@ -1,11 +1,12 @@
 const { Telegraf } = require('telegraf')
 const Genius = require('genius-lyrics')
-const commands = require('./helpers/commands')
-const logger = require('./helpers/logger')
+const commands = require('./bot/helpers/commands')
+const logger = require('./bot/helpers/logger')
+const config = require('./config')
 
-const Client = new Genius.Client(process.env.GENIUS)
-const bot = new Telegraf(process.env.BOT_TOKEN)
-const channelId = process.env.CHANNEL_ID ? process.env.CHANNEL_ID : -1001441677152
+const Client = new Genius.Client(config.genius)
+const bot = new Telegraf(config.bot)
+const channelId = config.channel
 
 
 bot.telegram.setMyCommands([
