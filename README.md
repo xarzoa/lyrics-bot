@@ -16,7 +16,7 @@
 
 ### Run locally
 
-- Clone repo and create .env file and add ```BOT_TOKEN``` , ```GENIUS``` , ```CHANNEL_ID``` and skip  first step.
+- Clone repo and create ```.env``` file and add ```BOT_TOKEN``` , ```GENIUS``` , ```CHANNEL_ID``` and skip  first step.
 - Y you trin to deploy by ya own . Just deploy it on railway🚞
 
 #### Without docker
