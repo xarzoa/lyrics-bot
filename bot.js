@@ -14,12 +14,16 @@ bot.telegram.setMyCommands([
         description:'Start message (don\'t do dis) '
       },
       {
+        command: 'help',
+        description: 'Need help?'
+      },
+      {
         command: commands.lyrics,
         description: 'Find lyrics'
       },
       {
-        command: 'help',
-        description: 'Need help?'
+        command: commands.rickroll,
+        description: 'Like surprises'
       }
 ])
 
@@ -98,6 +102,11 @@ Eg - <code> /lyrics Dandelions </code>`)
       }
     }
   }
+})
+
+
+bot.command(commands.rickroll, xaria => {
+  xaria.replyWithAnimation('https://c.tenor.com/yheo1GGu3FwAAAAC/rick-roll-rick-ashley.gif')
 })
 
 

@@ -1,5 +1,6 @@
 let commands = {
-  lyrics:'lyrics'
+  lyrics:'lyrics',
+  rickroll:'surprise'
 }
 
 module.exports = commands
