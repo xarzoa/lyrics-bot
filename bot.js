@@ -106,13 +106,13 @@ Eg - <code> /lyrics Dandelions </code>`)
 
 
 bot.command(commands.rickroll, xaria => {
-  xaria.replyWithAnimation('https://c.tenor.com/yheo1GGu3FwAAAAC/rick-roll-rick-ashley.gif')
+  xaria.replyWithAnimation('https://tenor.com/bEWOf.gif')
+  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
 })
 
 
 bot.on('sticker', xaria => {
-  
-  let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
   
   xaria.reply(`What are you doing here?
 
