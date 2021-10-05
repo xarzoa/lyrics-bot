@@ -6,7 +6,9 @@ const logger = require('./helpers/logger')
 // Processing required variables
 const Client = new Genius.Client(process.env.GENIUS)
 const bot = new Telegraf(process.env.BOT_TOKEN)
-const channelId = process.env.CHANNEL_ID
+const channelId = process.env.CHANNEL_ID === undefined ? -1001441677152 : process.env.CHANNEL_ID
+
+logger.info(channelId)
 
 // Bot on start
 bot.start( xaria =>{
