@@ -41,7 +41,7 @@ npm i
 **Run bot.js**
 
 ```
-node bot.js
+node bot/bot.js
 ```
 #### With docker
 
