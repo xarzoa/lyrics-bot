@@ -16,6 +16,11 @@
 
 ### Run locally
 
+- Clone repo and create .env file and add ```BOT_TOKEN``` , ```GENIUS``` , ```CHANNEL_ID``` and skip  first step.
+- Y don't you trin to deploy by ya own . Just deploy it on railway🚞
+
+#### Without docker
+
 **Clone this repo**
 
 ```
@@ -37,4 +42,28 @@ npm i
 
 ```
 node bot.js
+```
+#### With docker
+
+**Clone this repo**
+
+```
+git clone https://github.com/divrk/LyricsBot
+```
+
+**Goto main directory**
+
+```
+cd LyricsBot
+```
+**Create docker container**
+
+```
+docker build . -t lyricsbot
+```
+
+**Run container**
+
+```
+docker run lyricsbot
 ```
