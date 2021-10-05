@@ -6,7 +6,7 @@ const config = {
   channel: process.env.CHANNEL_ID ? process.env.CHANNEL_ID : logger.error(`CHANNEL_ID undefined`)
 }
 
-logger.info(config.channel)
+logger.info(JSON.stringify(config.channel))
 
 if (config.bot && config.genius && config.channel === undefined){
   logger.error('Some Environmental variables are empty')
