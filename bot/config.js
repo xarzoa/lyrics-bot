@@ -1,4 +1,4 @@
-const logger = require('./bot/helpers/logger')
+const logger = require('./helpers/logger')
 
 const config = {
   bot: process.env.BOT_TOKEN,
