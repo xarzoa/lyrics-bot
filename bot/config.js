@@ -10,7 +10,7 @@ if (process.env.CHANNEL_ID === undefined){
   logger.error('CHANNEL_ID is undefined! Exiting now')
   process.exit(1)
 }else if(process.env.GENIUS === undefined){
-  logger.error('GENIUS Token is undefined! Exiting now')
+  logger.error('GENIUS TOKEN is undefined! Exiting now')
   process.exit(1)
 }else if(process.env.BOT_TOKEN === undefined){
   logger.error('BOT_TOKEN Value is undefined! Exiting now')
