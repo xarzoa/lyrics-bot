@@ -7,7 +7,7 @@ const config = {
 }
 
 if ( process.env.BOT_TOKEN && process.env.GENIUS && process.env.CHANNEL_ID === undefined){
-  logger.error('Some Environmental variables are empty')
+  logger.error('Some Environmental variables are empty! Exiting now..')
   process.exit(1)
 }
 
