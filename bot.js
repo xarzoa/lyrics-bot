@@ -3,14 +3,27 @@ const Genius = require('genius-lyrics')
 const commands = require('./helpers/commands')
 const logger = require('./helpers/logger')
 
-// Processing required variables
 const Client = new Genius.Client(process.env.GENIUS)
 const bot = new Telegraf(process.env.BOT_TOKEN)
 const channelId = process.env.CHANNEL_ID ? process.env.CHANNEL_ID : -1001441677152
 
-logger.info(channelId)
 
-// Bot on start
+bot.telegram.setMyCommands([
+      {
+        command: 'start',
+        description:'Start message (don\'t do dis) '
+      },
+      {
+        command: commands.lyrics,
+        description: 'Find lyrics'
+      },
+      {
+        command: 'help',
+        description: 'Need help?'
+      }
+])
+
+
 bot.start( xaria =>{
   
   let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
@@ -21,9 +34,10 @@ bot.start( xaria =>{
   
   xaria.replyWithHTML(`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
 
-I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)})
+I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)
+})
 
-// Help command handler
+
 bot.help(xaria =>{  
   
   let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
@@ -40,17 +54,18 @@ A simple lyrics bot made by using <b>Telegraf and GENIUS</b>
 <code> /help </code> - Get this msg
 
 Join <b> @CatBio </b>
-`)})
+`)
+})
+
 
 bot.command( commands.lyrics , async xaria => {
   
   let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
   
-  // logger
   logger.info(defaultLogger)
 
   xaria.telegram.sendMessage(channelId , defaultLogger)
-  // Search
+  
   const msg = xaria.message.text.split(`/${commands.lyrics}`)
   
   if(msg[1] == ''){
@@ -85,7 +100,7 @@ Eg - <code> /lyrics Dandelions </code>`)
   }
 })
 
-// On sticker handler
+
 bot.on('sticker', xaria => {
   
   let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
@@ -97,7 +112,7 @@ I'm not your girlfriend! This is fuckin bullshit`)
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Sticker`)
 })
 
-// On msg logger
+
 bot.on( 'message' , xaria => {
   
   let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
@@ -110,3 +125,5 @@ bot.launch()
 
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
+
+//Reading respect ++ btw don't steal ma code :( 
