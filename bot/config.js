@@ -6,7 +6,7 @@ const config = {
   channel: process.env.CHANNEL_ID ? process.env.CHANNEL_ID : logger.error(`CHANNEL_ID undefined`)
 }
 
-if ( process.env.BOT_TOKEN && process.env.GENIUS && process.env.CHANNEL_ID === undefined){
+if ( process.env.BOT_TOKEN === undefined && process.env.GENIUS === undefined && process.env.CHANNEL_ID === undefined){
   logger.error('Some Environmental variables are empty! Exiting now..')
   process.exit(1)
 }
