@@ -73,7 +73,7 @@ bot.command( commands.lyrics , async xaria => {
   const msg = xaria.message.text.split(`/${commands.lyrics}`)
   
   if(msg[1] == ''){
-    xaria.replyWithHTML(` <b> Error ! 😐🖐️ </b> You typed nothing!😅
+    xaria.replyWithHTML(` <b> Error ! </b> You typed nothing!
 
 Type song name after the command.
 
@@ -96,7 +96,7 @@ Eg - <code> /lyrics Dandelions </code>`)
 <code>${lyrics.length > 4096 ? 'This lyrics is too big to handle. I found ' + lyrics.length + ' characters on this lyrics. Telegram only support upto 4096 characters per msg' : lyrics } </code>`);
     }catch(err){
       if(err){
-        xaria.reply(`Nothing found. 💔`)
+        xaria.reply(`404 - Nothing in there`)
         xaria.telegram.sendMessage(channelId,`${defaultLogger} ${err}`)
         logger.error(`${defaultLogger} ${err}`)
       }
