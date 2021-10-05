@@ -1,8 +1,8 @@
-## LyricsBot written by nodejs
+## Telegram LyricsBot written in nodejs
 
 ### Features
 
-- Logging on channel and console
+- Powerful logging on channel and console
 - Based on Genius API ( World's biggest lyrics site )
 - Simple and Fast 
 - Simple deployment
