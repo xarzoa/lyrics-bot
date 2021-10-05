@@ -6,15 +6,19 @@ const logger = require('./helpers/logger')
 // Envs
 const Client = new Genius.Client(process.env.GENIUS)
 const bot = new Telegraf(process.env.BOT_TOKEN)
+const CHANNEL_ID = process.env.CHANNEL_ID
 
 // Bot on start
-bot.start( xaria =>{ logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
+bot.start( xaria =>{
+  xaria.telegram.sendMessage(CHANNEL_ID,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`)
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
   xaria.replyWithHTML(`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
 
 I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)})
 
 // Help command handler
 bot.help(xaria =>{  
+  xaria.telegram.sendMessage(CHANNEL_ID,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`)
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
   xaria.replyWithHTML(`I'm <b>${xaria.botInfo.first_name}</b>
 
@@ -31,7 +35,8 @@ Join <b> @CatBio </b>
 bot.command( commands.lyrics , async xaria => {
   // logger
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
-  
+
+  xaria.telegram.sendMessage(CHANNEL_ID,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`)
   // Search
   const msg = xaria.message.text.split(`/${commands.lyrics}`)
   
@@ -48,7 +53,9 @@ Eg - <code> /lyrics Dandelions </code>`)
       const lyrics = await firstSong.lyrics();
       
       // Logger
-      logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${firstSong.raw.full_title}}`)
+      logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${firstSong.raw.full_title}`)
+
+      xaria.telegram.sendMessage(CHANNEL_ID,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${firstSong.raw.full_title} ${xaria.message.text}`)
       
       xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
@@ -58,6 +65,7 @@ Eg - <code> /lyrics Dandelions </code>`)
     }catch(err){
       if(err){
         xaria.reply(`Nothing found. 💔`)
+        xaria.telegram.sendMessage(CHANNEL_ID,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text} ${err}`)
         logger.error(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text} ${err}`)
       }
     }
@@ -69,11 +77,14 @@ bot.on('sticker', xaria => {
   xaria.reply(`What are you doing here?
 
 I'm not your girlfriend! This is fuckin bullshit`)
+    xaria.telegram.sendMessage(CHANNEL_ID,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Sticker`)
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Sticker`)
 })
 
 // On msg logger
 bot.on( 'message' , xaria => {
+
+  xaria.telegram.sendMessage(CHANNEL_ID,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}`)
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name}  ${xaria.message.text}`)
 })
 
