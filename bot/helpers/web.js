@@ -2,8 +2,9 @@ const express = require('express')
 const app = express()
 
 const web = (port) => {
+  app.set('view engine' ,'ejs')
   app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.render('index')
   })
     
   app.listen(port)
