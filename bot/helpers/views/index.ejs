@@ -7,22 +7,177 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./xaria.webp" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://coded.pages.dev/web/img/xaria.webp" type="image/webp" />
     
     <title> Xaria Dotson</title>
 
     <!-- style sheets -->
-    <link rel="stylesheet" href="./style.css">
-    
-    <!-- Analatics -->
-    
+    <style type="text/css">
+body{
 
-    <!-- Defering JS files -->
-    <script defer src="./main.js"></script>
+    padding: 0;
+
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+#app{
+  padding: 10px;
+}
+#header img{
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#header nav  ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.verified{
+  font-weight: bold;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#header nav  ul .left-items{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+#header nav  ul .dots{
+    margin-right: 10px;
+}
+#body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#body img{
+  width: 98%
+}
+#footer{
+  margin: 10px
+}
+#footer nav  ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#footer nav  ul .left-items{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+#bottom{
+  margin:10px
+}
+@keyframes bounce {
+  0%{
+    transform: scale(1);
+  }
+  25%{
+   transform: scale(1.1) 
+  }
+  50%{
+   transform: scale(.9)
+  }
+  75%{
+    transform: scale(1.1)
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+#hehe , #haha{
+  position: fixed;
+  bottom: -1000px;
+  background: #FFFFFFFA;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top:1px solid #BABABA70;
+}
+@keyframes open{
+  0%{
+    bottom:-1000px
+  }
+  70%{
+    bottom:0px
+  }
+}
+#closeBtnHolder , #close{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+#closeShare , #info{
+  position: relative;
+  top:5px;
+  height: 5px;
+  width: 50px;
+  border-radius: 10px;
+  background: #878787CC
+}
+#hehe .hehe h4 ,#haha .hehe h4{
+  padding: 10px;
+  border-top: 1px solid #F4F4F4FA
+}
+@keyframes close{
+  0%{
+    bottom:0px
+  }
+  70%{
+    bottom:-1000px
+  }
+}
+a{
+  color: #282828;
+  text-decoration: none;
+}
+a:hover{
+  color: #484848;
+}
+@media screen and (min-width: 720px) {
+  body{
+    position: relative;
+}
+  #app{
+    vertical-align: middle;
+    position: absolute;
+    width: 50%;
+    right: 100%;
+    left: 25%;
+  }
+  #hehe ,#haha{
+    width: 50%;
+    border-left: 1px solid #BABABA70;
+    border-right: 1px solid #BABABA70;
+    right: 100%;
+    left: 26%;
+  }
+}
+@keyframes blur {
+  0%{
+    filter: blur(0)
+  }
+  60%{
+    filter: blur(5px)
+  }
+}
+    </style>
     
-
-        
-
 </head>
 <body>
     
@@ -33,7 +188,7 @@
             <nav>
                 <ul>
                     <div class="left-items">
-                        <li> <img src="./xaria.webp" alt=""></li>
+                        <li> <img src="https://coded.pages.dev/web/img/xaria.webp" alt="xaria"></li>
                         <li class="verified"> Xaria Dotson<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#458eff" class="bi bi-patch-check-fill" viewBox="0 0 16 16"><path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" /></svg></li>
                     </div>
                     <li id="threeDots" class="dots"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16"><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" /></svg>
@@ -42,7 +197,7 @@
             </nav>
         </div>
         <div id="body">
-            <img src="./birch.jpg" alt="" />
+            <img src="https://coded.pages.dev/web/img/birch.jpg" alt="birch" />
         </div>
         <div id="footer">
             <nav>
@@ -95,6 +250,76 @@
     <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
   </div>
 </div>
+    <script>
+
+const views = document.getElementById('views')
+
+const heart = document.getElementById('heart')
+const comment = document.getElementById('comment')
+const share = document.getElementById('share')
+const save = document.getElementById('save')
+const app = document.getElementById('app')
+
+fetch('https://api.countapi.xyz/hit/dotson')
+    .then(res => res.json())
+    .then(view => {
+      views.innerHTML = `<b>${view.value}</b> View(s)`
+    })
+    
+heart.addEventListener('click', () => {
+  heart.style = `color: #FF085E;animation: 600ms bounce`
+  heart.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /></svg>`
+})
+save.addEventListener('click', () => {
+
+  save.style = `animation: 600ms bounce`
+
+  const bookmarkFilled = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="30" height="30" x="0" y="0" viewBox="0 0 212.045 212.045" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="M167.871,0H44.84C34.82,0,26.022,8.243,26.022,18v182c0,3.266,0.909,5.988,2.374,8.091c1.752,2.514,4.573,3.955,7.598,3.954  c2.86,0,5.905-1.273,8.717-3.675l55.044-46.735c1.7-1.452,4.142-2.284,6.681-2.284c2.538,0,4.975,0.832,6.68,2.288l54.86,46.724  c2.822,2.409,5.657,3.683,8.512,3.683c4.828,0,9.534-3.724,9.534-12.045V18C186.022,8.243,177.891,0,167.871,0z" fill="#000000" data-original="#000000" style=""/></g></svg>`
+  
+  save.innerHTML = bookmarkFilled
+})
+
+const hehe = document.getElementById('hehe')
+
+comment.addEventListener('click', () => {
+  window.open('https://instagram.com/XariaDotson', '_blank')
+})
+
+share.addEventListener('click' , () => {
+  hehe.style = `animation: open 700ms; bottom:0`
+  app.style = `animation:blur 700ms;filter:blur(5px)`
+})
+
+const closeShare = document.getElementById('closeShare')
+
+closeShare.addEventListener('click', () => {
+  hehe.style = `animation: close 700ms ; bottom: -1000px`
+  app.style = `filter:blur(0)`
+})
+
+
+ 
+const haha = document.getElementById('haha')
+
+const dots = document.getElementById('threeDots')
+
+
+
+dots.addEventListener('click' , () => {
+  haha.style = `animation: open 700ms; bottom:0`
+  app.style = `filter:blur(5px);animation:blur 700ms`
+})
+
+const info = document.getElementById('info')
+
+info.addEventListener('click', () => {
+  haha.style = `animation: close 700ms ; bottom: -1000px`
+  app.style = `filter:blur(0)`
+})
+    </script>
+    
+
+        
 
 </body>
 </html>
