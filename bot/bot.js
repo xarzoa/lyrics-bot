@@ -112,7 +112,7 @@ Eg - <code> /lyrics Dandelions </code>`)
 })
 
 
-bot.command(commands.rickroll, xaria => {
+bot.command(commands.rickRoll, xaria => {
   xaria.replyWithAnimation('https://tenor.com/bEWOf.gif')
   xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
