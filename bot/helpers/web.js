@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 const web = (port) => {
-  app.set('views' , './')
+  app.set('views' , path.join( './', "views"))
   app.set('view engine' ,'ejs')
   app.get('/', (req, res) => {
   res.render('index')
