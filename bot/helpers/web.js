@@ -4,7 +4,7 @@ const app = express()
 const web = (port) => {
   app.set('view engine' ,'ejs')
   app.get('/', (req, res) => {
-  res.render('index')
+  res.render('./bot/helpers/views/index')
   })
     
   app.listen(port)
