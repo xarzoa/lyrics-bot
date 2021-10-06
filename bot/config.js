@@ -1,4 +1,5 @@
 const logger = require('./helpers/logger')
+require('dotenv').config()
 
 const config = {
   bot: process.env.BOT_TOKEN ? process.env.BOT_TOKEN : logger.error(`BOT_TOKEN undefined!`),
