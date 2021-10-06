@@ -3,6 +3,7 @@ const Genius = require('genius-lyrics')
 const commands = require('./helpers/commands')
 const logger = require('./helpers/logger')
 const config = require('./config')
+const web = require('./helpers/web')
 
 const Client = new Genius.Client(config.genius)
 const bot = new Telegraf(config.bot)
