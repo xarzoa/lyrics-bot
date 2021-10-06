@@ -119,8 +119,8 @@ bot.command(commands.rickroll, xaria => {
 })
 
 bot.command(commands.webPage, xaria => {
-  xaria.reply(`${config.web ? config.web + 'up.railway.app': 'No Website'}`)
-  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web + 'up.railway.app': 'No Website'}`)
+  xaria.reply(`${config.web ? config.web + '.up.railway.app': 'No Website'}`)
+  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web + '.up.railway.app': 'No Website'}`)
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web + '.up.railway.app': 'No Website'}`)
 })
 
