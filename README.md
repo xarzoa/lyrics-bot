@@ -75,3 +75,6 @@ sudo docker run lyricsbot
 - Replit
 - Rick Astley ( to be part of my bot )
 - You ( for your star )
+
+
+**Discord bot coming soon**
