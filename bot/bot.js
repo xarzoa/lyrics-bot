@@ -8,7 +8,6 @@ const web = require('./helpers/web')
 const Client = new Genius.Client(config.genius)
 const bot = new Telegraf(config.bot)
 const channelId = config.channel
-const web = config.web
 
 config.web ? web.web(3000) : logger.info(`No website!`)
 
