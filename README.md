@@ -8,7 +8,7 @@
 - Simple deployment
 - Fully customisable (If you know code editing)
 - You don't need to add commands manually
-
+- Beautiful (Bullshit, it sus) webpage with stats(stats coming soon...)
 
 ### Deploy on railway (recommended)
 
