@@ -77,4 +77,6 @@ sudo docker run lyricsbot
 - You ( for your star )
 
 
-**Discord bot coming soon**
+
+
+**Discord bot coming soon...**
