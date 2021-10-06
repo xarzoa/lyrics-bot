@@ -5,7 +5,7 @@ const web = (port) => {
   app.set('views' , './')
   app.set('view engine' ,'ejs')
   app.get('/', (req, res) => {
-  res.render('index.ejs')
+  res.render('index')
   })
     
   app.listen(port)
