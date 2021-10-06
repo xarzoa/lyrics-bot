@@ -7,8 +7,11 @@ const commands = {
   lyrics: 'lyrics',
   lyricsDescription: 'Find lyrics',
   
-  rickroll: 'surprise',
-  rickrollDescription: 'Like surprises?'
+  rickRoll: 'surprise',
+  rickRollDescription: 'Like surprises?',
+  
+  webPage: 'website',
+  webPageDescription: 'Website'
   
 }
 

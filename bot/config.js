@@ -4,7 +4,8 @@ require('dotenv').config({path:'./bot/.env'})
 const config = {
   bot: process.env.BOT_TOKEN ? process.env.BOT_TOKEN : logger.error(`BOT_TOKEN undefined!`),
   genius: process.env.GENIUS ? process.env.GENIUS : logger.error(`GENIUS TOKEN undefined!`) ,
-  channel: process.env.CHANNEL_ID ? process.env.CHANNEL_ID : logger.error(`CHANNEL_ID undefined`)
+  channel: process.env.CHANNEL_ID ? process.env.CHANNEL_ID : logger.error(`CHANNEL_ID undefined`),
+  web: process.env.NAME
 }
 
 if (process.env.BOT_TOKEN === undefined){

@@ -8,8 +8,9 @@ const web = require('./helpers/web')
 const Client = new Genius.Client(config.genius)
 const bot = new Telegraf(config.bot)
 const channelId = config.channel
+const web = config.web
 
-web.web(3000)
+config.web ? web.web(3000) : logger.info(`No website!`)
 
 bot.telegram.setMyCommands([
       {
@@ -25,8 +26,12 @@ bot.telegram.setMyCommands([
         description: commands.lyricsDescription
       },
       {
-        command: commands.rickroll,
-        description: commands.rickrollDescription
+        command: commands.rickRoll,
+        description: commands.rickRollDescription
+      },
+      {
+        command: commands.webPage,
+        description: commands.webPageDescription
       }
 ])
 
@@ -114,6 +119,11 @@ bot.command(commands.rickroll, xaria => {
   logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
 })
 
+bot.command(commands.webPage, xaria => {
+  xaria.reply(`${config.web ? config.web + 'up.railway.app': 'No Website'}`)
+  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web + 'up.railway.app': 'No Website'}`)
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web + 'up.railway.app': 'No Website'}`)
+})
 
 bot.on('sticker', xaria => {
   
