@@ -8,6 +8,7 @@ const Client = new Genius.Client(config.genius)
 const bot = new Telegraf(config.bot)
 const channelId = config.channel
 
+web.web(3000)
 
 bot.telegram.setMyCommands([
       {
