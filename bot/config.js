@@ -24,7 +24,7 @@ if (BOT_TOKEN === undefined){
 }else if(CHANNEL_ID === undefined){
   logger.error('CHANNEL_ID is undefined! Exiting now')
   process.exit(1)
-}else if(PORT === undefined || PORT !== 3000){
+}else if(PORT === undefined){
   logger.error('PORT is undefined! Exiting now')
   process.exit(1)
 }
