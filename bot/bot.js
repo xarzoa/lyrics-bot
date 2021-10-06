@@ -8,8 +8,9 @@ const web = require('./helpers/web')
 const Client = new Genius.Client(config.genius)
 const bot = new Telegraf(config.bot)
 const channelId = config.channel
+const port = config.port
 
-config.web ? web.web(3000) : logger.info(`No website!`)
+config.web ? web.web(port) : logger.info(`No website!`)
 
 bot.telegram.setMyCommands([
       {
