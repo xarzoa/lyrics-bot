@@ -9,8 +9,9 @@ const Client = new Genius.Client(config.genius)
 const bot = new Telegraf(config.bot)
 const channelId = config.channel
 const port = config.port
+const username = config.username
 
-config.web ? web.web(port) : logger.info(`No website!`)
+config.web && username ? web.web(port,username) : logger.info(`No website!`)
 
 bot.telegram.setMyCommands([
       {
@@ -141,10 +142,6 @@ bot.on( 'message' , xaria => {
 
   xaria.telegram.sendMessage(channelId, defaultLogger)
   logger.info(defaultLogger)
-  
-  const username = xaria.botInfo.username
-  
-  module.exports = username
   
 })
 
