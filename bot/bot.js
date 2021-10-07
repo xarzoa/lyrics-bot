@@ -11,7 +11,7 @@ const channelId = config.channel
 const port = config.port
 const username = config.username
 
-config.web && username ? web.web(port,username) : logger.info(`No website!`)
+config.web ? web.web(port,username) : logger.info(`No website!`)
 
 bot.telegram.setMyCommands([
       {
