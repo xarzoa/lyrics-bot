@@ -12,12 +12,12 @@
 
 ### Deploy on railway (recommended)
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fdivrk%2FLyricsBot&envs=BOT_TOKEN%2CGENIUS%2CCHANNEL_ID&BOT_TOKENDesc=Telegram+bot+token+%28%40Botfather%29&GENIUSDesc=Genius+client+secret+%28+https%3A%2F%2Fgenius.com+%29&CHANNEL_IDDesc=Logging+channel+Id&referralCode=d4rk)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fdivrk%2FLyricsBot&envs=BOT_TOKEN%2CGENIUS%2CCHANNEL_ID%2CPORT%2CNAME&BOT_TOKENDesc=Telegram+bot+token+%28%40Botfather%29&GENIUSDesc=Genius+client+secret+%28+https%3A%2F%2Fgenius.com+%29&CHANNEL_IDDesc=Logging+channel+Id&PORTDesc=Public+port+%28+Don%27t+change+if+you+don%27t+know+about+this+%29&NAMEDesc=Railway+app+name+%28You+can+add+it+after+deploying%29&PORTDefault=3000&referralCode=d4rk)
 
 ### Run locally
 
-- Fork this repo and rename ```./bot/sample.env``` file to ```.env``` and fill ```BOT_TOKEN``` , ```GENIUS``` , ```CHANNEL_ID``` and skip  first step.
-- Y you trin to deploy by ya own . Just deploy it on railway🚞
+- Fork this repo and rename ```./bot/sample.env``` file to ```.env``` and fill ```BOT_TOKEN``` , ```GENIUS``` , ```CHANNEL_ID``` , ```PORT```*don't change this* , ```NAME``` and skip  first step.
+- Y you tryin to deploy by ya own . Just deploy it on railway 🚞
 
 #### Without docker
 
