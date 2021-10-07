@@ -121,9 +121,9 @@ bot.command(commands.rickRoll, xaria => {
 })
 
 bot.command(commands.webPage, xaria => {
-  xaria.reply(`${config.web ? 'https://' + config.web + '.up.railway.app': 'No Website'}`)
-  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web + '.up.railway.app': 'No Website'}`)
-  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web + '.up.railway.app': 'No Website'}`)
+  xaria.reply(`${config.web ? config.web: 'No Website'}`)
+  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web : 'No Website'}`)
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web : 'No Website'}`)
 })
 
 bot.on('sticker', xaria => {
