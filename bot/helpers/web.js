@@ -8,7 +8,7 @@ app.set('view engine' ,'ejs')
 
 const web = (port, username) => {
   app.get('/', (req, res) => {
-  res.render('index',{invite:"https://t.me/"+username+"?startgroup=true"})
+  res.render('index',{invite:"https://t.me/" + username+ "?startgroup=true"})
   })
   app.listen(port)
 }

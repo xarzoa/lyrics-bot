@@ -14,7 +14,7 @@ const config = {
   channel: CHANNEL_ID ? CHANNEL_ID : logger.error(`CHANNEL_ID undefined`),
   web: URL,
   port: PORT,
-  username: USERNAME
+  username: USERNAME ? USERNAME : logger.info('Skipping website deployment!')
 }
 
 if (BOT_TOKEN === undefined){
