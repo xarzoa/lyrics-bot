@@ -89,6 +89,23 @@ Type song name after the command.
 Eg - <code> /lyrics Dandelions </code>`)
   }else{
     try{
+      if(msg[1].includes(`@${xaria.botInfo.username}`)){
+        const grpmsg = msg[1].split(`/${commands.lyrics}@${xaira.botInfo.username}`)
+        const searches = await Client.songs.search(grpmsg[1])
+      const firstSong = searches[0];
+      const lyrics = await firstSong.lyrics();
+      
+      // Logger
+      logger.info(`${defaultLogger} ${firstSong.raw.full_title}`)
+
+      xaria.telegram.sendMessage(channelId,`${defaultLogger} ${firstSong.raw.full_title}`)
+      
+      xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+
+<b><i>${firstSong.raw.primary_artist.name}</i></b>
+
+<code>${lyrics.length > 4096 ? 'This lyrics is too big to handle. I found ' + lyrics.length + ' characters on this lyrics. Telegram only support upto 4096 characters per msg' : lyrics } </code>`);
+      }else{
       const searches = await Client.songs.search(msg[1])
       const firstSong = searches[0];
       const lyrics = await firstSong.lyrics();
@@ -103,7 +120,7 @@ Eg - <code> /lyrics Dandelions </code>`)
 <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
 <code>${lyrics.length > 4096 ? 'This lyrics is too big to handle. I found ' + lyrics.length + ' characters on this lyrics. Telegram only support upto 4096 characters per msg' : lyrics } </code>`);
-    }catch(err){
+    }}catch(err){
       if(err){
         xaria.reply(`${err}`) // if you use err without template literals. bot will return {} without any value
         xaria.telegram.sendMessage(channelId,`${defaultLogger} ${err}`)
