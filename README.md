@@ -12,7 +12,7 @@
 
 ### Deploy on railway (recommended)
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fdivrk%2FLyricsBot&envs=BOT_TOKEN%2CGENIUS%2CCHANNEL_ID%2CURL%2CUSERNAME%2CPORT&optionalEnvs=URL%2CUSERNAME&BOT_TOKENDesc=Telegram+bot+token+%28%40BotFather%29&GENIUSDesc=Genius+client+secret+%2C+ID+idk+%F0%9F%A4%B7+%28+https%3A%2F%2Fgenius.com%29&CHANNEL_IDDesc=Log+channel+ID&URLDesc=railway+app+url+or+ip+address+of+your+vps+or+your+added+custom+domain.+%23+Optional+%28If+you+need+website.+Fill+this+%29&USERNAMEDesc=Username+of+your+bot+if+you+need+website+you+must+fill+this+too&PORTDesc=Don%27t+change+this&PORTDefault=3000&referralCode=d4rk)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fdivrk%2FLyricsBot&envs=BOT_TOKEN%2CGENIUS%2CCHANNEL_ID%2CURL%2CUSERNAME%2CPORT&optionalEnvs=URL%2CUSERNAME&BOT_TOKENDesc=Telegram+bot+token+%28%40BotFather%29&GENIUSDesc=Genius+client+secret+%2C+ID+idk+%F0%9F%A4%B7+%28+https%3A%2F%2Fgenius.com%29&CHANNEL_IDDesc=Log+channel+ID&URLDesc=railway+app+url+or+ip+address+of+your+vps+or+your+added+custom+domain.+%23+Optional+%28If+you+need+website.+Fill+this+%29&USERNAMEDesc=Username+of+your+bot,+if+you+need+website+you+must+fill+this+too&PORTDesc=Don%27t+change+this&PORTDefault=3000&referralCode=d4rk)
 
 ### Run locally
 
