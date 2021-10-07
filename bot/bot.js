@@ -79,12 +79,7 @@ bot.command( commands.lyrics , async xaria => {
 
   xaria.telegram.sendMessage(channelId , defaultLogger)
   
-  if(xaria.message.text.includes(`@${xaria.botInfo.username}`)){
-    const msg = xaria.message.text.split(`/${commands.lyrics}@${xaria.botInfo.username}`)
-  }else{
-    const msg = xaria.message.text.split(`/${commands.lyrics}`)
-  }
-    
+  const msg = xaria.message.text.split(`/${commands.lyrics}`)
   
   if(msg[1] == ''){
     xaria.replyWithHTML(` <b> Error ! </b> You typed nothing!
