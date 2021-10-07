@@ -141,6 +141,11 @@ bot.on( 'message' , xaria => {
 
   xaria.telegram.sendMessage(channelId, defaultLogger)
   logger.info(defaultLogger)
+  
+  const username = xaria.botInfo.username
+  
+  module.exports = username
+  
 })
 
 bot.launch()
