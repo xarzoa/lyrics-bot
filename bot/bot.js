@@ -44,7 +44,7 @@ bot.start( xaria =>{
   
   logger.info(defaultLogger)
   
-  xaria.telegram.reply(xaria.update.message.from,`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
+  xaria.telegram.sendMessage(xaria.update.message.from,`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
 
 I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)
 })
