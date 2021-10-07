@@ -11,8 +11,8 @@ const config = {
   bot: BOT_TOKEN ? BOT_TOKEN : logger.error(`BOT_TOKEN undefined!`),
   genius: GENIUS ? GENIUS : logger.error(`GENIUS TOKEN undefined!`) ,
   channel: CHANNEL_ID ? CHANNEL_ID : logger.error(`CHANNEL_ID undefined`),
-  web: process.env.NAME,
-  port: process.env.PORT
+  web: NAME,
+  port: PORT
 }
 
 if (BOT_TOKEN === undefined){
