@@ -44,7 +44,7 @@ bot.start( xaria =>{
   
   logger.info(defaultLogger)
   
-  xaria.replyWithHTML(`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
+  xaria.replyWithHTML(xaria.update.message.from.id,`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
 
 I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)
 })
