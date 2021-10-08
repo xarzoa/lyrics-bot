@@ -81,4 +81,4 @@ sudo docker run lyricsbot
 
 
 
-Discord bot under development
+Discord bot under development. Btw coffee will help it to release it soon😑🤷
