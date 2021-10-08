@@ -81,4 +81,4 @@ sudo docker run lyricsbot
 
 
 
-**[Discord bot](https://github.com/divrk/DiscordLyricsBot)**
+**[Discord bot](https://github.com/divrk/DiscordLyricsBot)[discontinued until 2023]**
