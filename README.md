@@ -1,3 +1,5 @@
+![LyricsBot](https://divrk.pages.dev/img/lyricsbot.png)
+
 ## Telegram LyricsBot written in nodejs
 
 ### Features
