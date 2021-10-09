@@ -25,8 +25,7 @@
         },
         "PORT":{
             "description":"Don't change this value 🤷",
-            "value": 3000,
-            "required":false
+            "value": 3000
         },
         "USERNAME":{
             "description":"Telegram bot's username (Fill this if you need website)",
