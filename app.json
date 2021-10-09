@@ -1,0 +1,15 @@
+{
+    "name": "LyricsBot",
+    "description": "A Telegram LyricsBot.",
+    "logo": "https://orsixtyone.cf/images/cover.png",
+    "keywords": [
+      "Lyrics",
+      "telegram",
+      "Nodejs",
+      "Lyrics-bot"
+    ],
+    "repository": "https://github.com/divrk/LyricsBot",
+    "website": "https://divrk.github.io/LyricsBot",
+    "success_url": "https://divrk.github.io/LyricsBot",
+    "stack": "container"
+}
