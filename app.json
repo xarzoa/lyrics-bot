@@ -1,7 +1,7 @@
 {
     "name": "LyricsBot",
-    "description": "A Telegram LyricsBot.",
-    "logo": "https://orsixtyone.cf/images/cover.png",
+    "description": "A Telegram LyricsBot. Fill USERNAME and URL if you need website",
+    "logo": "https://divrk.pages.dev/img/lyricsbot.png",
     "keywords": [
       "lyrics",
       "telegram",
@@ -28,7 +28,7 @@
             "value": 3000
         },
         "USERNAME":{
-            "description":"Telegram bot's username (Fill this if you need website)",
+            "description":"Telegram bot's username",
             "required":false
         },
         "URL":{
