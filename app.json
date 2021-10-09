@@ -11,7 +11,7 @@
     "repository": "https://github.com/divrk/LyricsBot",
     "website": "https://divrk.github.io/LyricsBot",
     "success_url": "https://divrk.github.io/LyricsBot",
-    "stack": "container"
+    "stack": "container",
     "env":{
         "BOT_TOKEN":{
             "description":"Telegram bot token from @botfather"
