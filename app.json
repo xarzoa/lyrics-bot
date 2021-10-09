@@ -12,4 +12,28 @@
     "website": "https://divrk.github.io/LyricsBot",
     "success_url": "https://divrk.github.io/LyricsBot",
     "stack": "container"
+    "env":{
+        "BOT_TOKEN":{
+            "description":"Telegram bot token from @botfather"
+        },
+        "GENIUS":{
+            "description":"Genius token/client id idk🤷 whatever just paste"
+        },
+        "CHANNEL_ID":{
+            "description":"Telegram log channel ID"
+        },
+        "USERNAME":{
+            "description":"Telegram bot's username (Fill this if you need website)",
+            "required":false
+        },
+        "URL":{
+            "description":"heroku app url ( https://yourapp.herokuapp.com )",
+            "required":false
+        },
+        "PORT":{
+            "description":"Don't change this value🤷",
+            "value": 3000,
+            "required":false
+        }
+    }
 }
