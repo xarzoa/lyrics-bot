@@ -3,10 +3,11 @@
     "description": "A Telegram LyricsBot.",
     "logo": "https://orsixtyone.cf/images/cover.png",
     "keywords": [
-      "Lyrics",
+      "lyrics",
       "telegram",
-      "Nodejs",
-      "Lyrics-bot"
+      "nodejs",
+      "lyrics-bot",
+      "lyricsbot"
     ],
     "repository": "https://github.com/divrk/LyricsBot",
     "website": "https://divrk.github.io/LyricsBot",
@@ -17,10 +18,15 @@
             "description":"Telegram bot token from @botfather"
         },
         "GENIUS":{
-            "description":"Genius token/client id idk🤷 whatever just paste"
+            "description":"Genius token/client id idk 🤷 whatever just paste"
         },
         "CHANNEL_ID":{
             "description":"Telegram log channel ID"
+        },
+        "PORT":{
+            "description":"Don't change this value 🤷",
+            "value": 3000,
+            "required":false
         },
         "USERNAME":{
             "description":"Telegram bot's username (Fill this if you need website)",
@@ -29,11 +35,6 @@
         "URL":{
             "description":"heroku app url ( https://yourapp.herokuapp.com )",
             "required":false
-        },
-        "PORT":{
-            "description":"Don't change this value🤷",
-            "value": 3000,
-            "required":false
-        }
+        } 
     }
 }
