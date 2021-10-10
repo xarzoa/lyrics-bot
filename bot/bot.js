@@ -1,4 +1,4 @@
-const { Telegraf } = require('telegraf')
+const { Telegraf , Markup } = require('telegraf')
 const Genius = require('genius-lyrics')
 const commands = require('./helpers/commands')
 const logger = require('./helpers/logger')
@@ -36,6 +36,21 @@ bot.telegram.setMyCommands([
       }
 ])
 
+// Available in Feature............................................
+
+// bot.command('helo',xaria =>
+//   xaria.reply('Website',Markup.inlineKeyboard([
+//     Markup.button.callback('GO','hehe'),Markup.button.callback('GO','haha')
+//   ])),
+//   bot.action('hehe', xaria =>{
+//     xaria.reply('ehe')
+//   })
+// )
+
+
+// bot.action('haha', xaria =>{
+//   xaria.reply('ehe')
+// })
 
 bot.start( xaria =>{
   
@@ -51,7 +66,7 @@ I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)
 })
 
 
-bot.help(xaria =>{  
+bot.help( xaria =>{  
   
   let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
   
@@ -70,6 +85,8 @@ Join <b> @CatBio </b>
 `)
 })
 
+
+// sed im too lzy to wrt sm funcs to do tse tngs
 
 bot.command( commands.lyrics , async xaria => {
   
@@ -139,7 +156,6 @@ Eg - <code> /lyrics Dandelions </code>`)
     }
   }
 })
-
 
 bot.command(commands.rickRoll, xaria => {
   xaria.replyWithAnimation('https://tenor.com/bEWOf.gif')
