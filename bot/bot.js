@@ -112,12 +112,12 @@ Eg - <code> /lyrics Dandelions </code>`)
       
       const splitLyrics = index => {
         const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
-        xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+        await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
 <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
 <code>${ longLyrics[0] } </code>`);
-        xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`);
+        await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`);
       }
       // Logger
       logger.info(`${defaultLogger} ${firstSong.raw.full_title}`)
