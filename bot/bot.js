@@ -116,8 +116,10 @@ Eg - <code> /lyrics Dandelions </code>`)
 
 <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
-<code>${ longLyrics[0] } </code>`);
-        await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`);
+<code>${ longLyrics[0] } </code>`)
+
+
+        await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
       }
       // Logger
       logger.info(`${defaultLogger} ${firstSong.raw.full_title}`)
