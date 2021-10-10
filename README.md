@@ -1,5 +1,3 @@
-## Will be discontinued 😐. Movin to deno🤷🏻
-
 ![LyricsBot](https://divrk.pages.dev/img/lyricsbot.png)
 
 ## Telegram LyricsBot written in nodejs
