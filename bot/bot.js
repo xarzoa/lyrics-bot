@@ -93,16 +93,43 @@ Eg - <code> /lyrics Dandelions </code>`)
       const firstSong = searches[0];
       const lyrics = await firstSong.lyrics();
       
+      const splitLyrics = index => {
+        const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
+        xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+
+<b><i>${firstSong.raw.primary_artist.name}</i></b>
+
+<code>${ longLyrics[0] } </code>`);
+        xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`);
+      }
       // Logger
       logger.info(`${defaultLogger} ${firstSong.raw.full_title}`)
 
       xaria.telegram.sendMessage(channelId,`${defaultLogger} ${firstSong.raw.full_title}`)
-      
-      xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+
+      if(lyrics.length > 4096){
+
+        if(lyrics.substring(0,4000).endsWith(" ")){
+          splitLyrics(4000)
+        }else{
+          for(let i = 4000 ; i < 4020 ; i++){
+            if(lyrics.substring(0,i).endsWith(" ")){
+              splitLyrics(i)
+              return;
+            }
+          }
+        }
+
+        
+
+      }else{
+        xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
 <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
-<code>${lyrics.length > 4096 ? 'This lyrics is too big to handle. I found ' + lyrics.length + ' characters on this lyrics. Telegram only support upto 4096 characters per msg' : lyrics } </code>`);
+<code>${ lyrics } </code>`);
+      }
+      
     }catch(err){
       if(err){
         xaria.reply(`${err}`) // if you use err without template literals. bot will return {} without any value
@@ -150,4 +177,5 @@ bot.launch()
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
 
-// Reading respect ++ btw don't steal ma code! mom ... he/she robbed my code :( 
+// Reading respect ++
+// btw don't steal ma code! mom ... he/she stole ma code :( 
