@@ -76,11 +76,11 @@ sudo docker run lyricsbot
 ### Thanks
 
 - Telegraf
-- Me
+- Me (Crying noob)
 - My brain ( Bruh )
 - Replit
 - Rick Astley ( to be part of my bot )
-- You ( for your star )
+- You ( for ur star )
 
 
 <a href="https://www.buymeacoffee.com/d4rk"><img height="40px" src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=d4rk&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"></a>
