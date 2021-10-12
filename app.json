@@ -23,16 +23,13 @@
         "CHANNEL_ID":{
             "description":"Telegram log channel ID"
         },
-        "PORT":{
-            "description":"Don't change this value 🤷",
-            "value": 3000
-        },
         "USERNAME":{
             "description":"Telegram bot's username",
             "required":false
         },
         "URL":{
             "description":"heroku app url ( https://yourapp.herokuapp.com )",
+            "value":"https://yourapp.herokuapp.com",
             "required":false
         } 
     }

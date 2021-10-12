@@ -48,28 +48,23 @@ bot.telegram.setMyCommands([
 //   xaria.reply('ehe')
 // })
 
-const defaultLogger = async =>{
-  let logs = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
-  await logger.info(defaultLogger)
-  await xaria.telegram.sendMessage(channelId, defaultLogger)
+const defaultLogger = log => {
+  const logTemplate = `${log.update.message.from.id} ${log.update.message.from.first_name} ${log.message.text}`
+  logger.info(logTemplate)
+  log.telegram.sendMessage(channelId, logTemplate)
 }
 
+
 bot.start( xaria =>{
-  
-  defaultLogger()
-  
+  defaultLogger(xaria)
   xaria.replyWithHTML(`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
 
 I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)
 })
 
 
-bot.help( xaria =>{  
-  
-  let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
-  
-  xaria.telegram.sendMessage(channelId, defaultLogger)
-  logger.info(defaultLogger)
+bot.help( xaria =>{
+  defaultLogger(xaria)
   xaria.replyWithHTML(`I'm <b>${xaria.botInfo.first_name}</b>
 
 A simple lyrics bot made by using <b>Telegraf and GENIUS</b>
@@ -80,95 +75,85 @@ Join <b> @CatBio </b>
 `)
 })
 
+
 bot.command(commands.rickRoll, xaria => {
+  defaultLogger(xaria)
   xaria.replyWithAnimation('https://tenor.com/bEWOf.gif')
-  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
-  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
 })
 
+
 bot.command(commands.webPage, xaria => {
+  defaultLogger(xaria)
   xaria.reply(`${config.web ? config.web: 'No Website'}`)
-  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web : 'No Website'}`)
-  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web : 'No Website'}`)
 })
 
 bot.on('message', async xaria =>{
-
+  defaultLogger(xaria)
   if(xaria.message.text){
+
     if(xaria.message.text.startsWith('/')){
-    const cmds = ['help','start', commands.rickRoll , commands.webPage]
-    for(let i = 0 ; i < cmds.length ; i++){
-      if(xaria.message.text !== `/${cmds[i]}`){
-        xaria.reply(`I can't understand what you tryin to say :(`)
-        return;
-      }
-    }
-  }
-
-  let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
-  logger.info(defaultLogger)
-
-  xaria.telegram.sendMessage(channelId , defaultLogger)
-
-  if(!xaria.message.text.startsWith('/')){
-    try{
-      const searches = await Client.songs.search(xaria.message.text)
-      
-      // Available in future
-      // for(let i = 0 ; i < 5 ; i++ ){
-      //   logger.info(JSON.stringify(searches[i].raw.full_title))
-      // }
-
-      const firstSong = searches[0];
-      const lyrics = await firstSong.lyrics();
-      
-      const splitLyrics = async index => {
-      const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
-      await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
-
-<b><i>${firstSong.raw.primary_artist.name}</i></b>
-
-<code>${ longLyrics[0] } </code>`)
-
-
-      await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
-      }
-      // Logger
-      logger.info(`${defaultLogger} ${firstSong.raw.full_title}`)
-
-      xaria.telegram.sendMessage(channelId,`${defaultLogger} ${firstSong.raw.full_title}`)
-
-      if(lyrics.length > 4096){
-
-        if(lyrics.substring(0,4000).endsWith(" ")){
-          splitLyrics(4000)
-        }else{
-          for(let i = 4000 ; i < 4020 ; i++){
-            if(lyrics.substring(0,i).endsWith(" ")){
-              splitLyrics(i)
-              return;
-            }
+      const cmds = ['help','start', commands.rickRoll , commands.webPage]
+      for(let i = 0 ; i < cmds.length ; i++){
+        if(xaria.message.text !== `/${cmds[i]}`){
+          xaria.reply(`I can't understand what you tryin to say :(`)
+          return;
           }
         }
+    }
 
+    if(!xaria.message.text.startsWith('/')){
+      try{
+        const searches = await Client.songs.search(xaria.message.text)
         
+        // Available in future
+        // for(let i = 0 ; i < 5 ; i++ ){
+        //   logger.info(JSON.stringify(searches[i].raw.full_title))
+        // }
 
-      }else{
-        xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+        const firstSong = searches[0];
+        const lyrics = await firstSong.lyrics();
+        
+        const splitLyrics = async index => {
+        const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
+        await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
-<b><i>${firstSong.raw.primary_artist.name}</i></b>
+  <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
-<code>${ lyrics } </code>`);
-      }
-      
-    }catch(err){
-      if(err){
-        xaria.reply(`${err}`) // if you use err without template literals. bot will return {} without any value
-        xaria.telegram.sendMessage(channelId,`${defaultLogger} ${err}`)
-        logger.error(`${defaultLogger} ${err}`)
+  <code>${ longLyrics[0] } </code>`)
+
+
+        await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
+        }
+
+        if(lyrics.length > 4096){
+
+          if(lyrics.substring(0,4000).endsWith(" ")){
+            splitLyrics(4000)
+          }else{
+            for(let i = 4000 ; i < 4020 ; i++){
+              if(lyrics.substring(0,i).endsWith(" ")){
+                splitLyrics(i)
+                return;
+              }
+            }
+          }
+
+          
+
+        }else{
+          xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+
+  <b><i>${firstSong.raw.primary_artist.name}</i></b>
+
+  <code>${ lyrics } </code>`);
+        }
+        
+      }catch(err){
+        if(err){
+          xaria.reply(`${err}`) // if you use err without template literals. bot will return {} without any value
+        }
       }
     }
-  }
   }else{
     xaria.reply(`I can't understand what you tryin to say :(`)
   }
