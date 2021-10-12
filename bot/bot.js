@@ -48,13 +48,15 @@ bot.telegram.setMyCommands([
 //   xaria.reply('ehe')
 // })
 
+const defaultLogger = () =>{
+  let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
+  logger.info(defaultLogger)
+  xaria.telegram.sendMessage(channelId, defaultLogger)
+}
+
 bot.start( xaria =>{
   
-  let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
-  
-  xaria.telegram.sendMessage(channelId, defaultLogger)
-  
-  logger.info(defaultLogger)
+  defaultLogger()
   
   xaria.replyWithHTML(`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
 
