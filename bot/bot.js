@@ -92,7 +92,8 @@ bot.command(commands.webPage, xaria => {
 
 bot.on('message', async xaria =>{
 
-  if(xaria.message.text.startsWith('/')){
+  if(xaria.message.text){
+    if(xaria.message.text.startsWith('/')){
     const cmds = ['help','start', commands.rickRoll , commands.webPage]
     for(let i = 0 ; i < cmds.length ; i++){
       if(xaria.message.text !== `/${cmds[i]}`){
@@ -166,7 +167,9 @@ bot.on('message', async xaria =>{
       }
     }
   }
-
+  }else{
+    xaria.reply(`I can't understand what you tryin to say :(`)
+  }
 
 })
 

@@ -1,7 +1,7 @@
 const logger = require('./helpers/logger')
 require('dotenv').config({path:'./bot/.env'})
 
-const BOT_TOKEN = process.env.BOT_TOKEN
+const BOT_TOKEN = process.env.BOT_TOKEN 
 const GENIUS = process.env.GENIUS
 const CHANNEL_ID = process.env.CHANNEL_ID
 const URL = process.env.URL
