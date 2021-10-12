@@ -23,6 +23,9 @@
         "CHANNEL_ID":{
             "description":"Telegram log channel ID"
         },
+        "DETAKEY":{
+            "description":"Deta project key from deta.sh"
+        },
         "USERNAME":{
             "description":"Telegram bot's username",
             "required":false

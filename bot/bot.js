@@ -1,17 +1,20 @@
 const { Telegraf , Markup } = require('telegraf')
 const Genius = require('genius-lyrics')
+const { Deta } = require('deta')
 const commands = require('./helpers/commands')
 const logger = require('./helpers/logger')
 const config = require('./config')
 const web = require('./helpers/web')
 
 const Client = new Genius.Client(config.genius)
+const deta = Deta(config.deta)
+const db = deta.Base("users")
 const bot = new Telegraf(config.bot)
 const channelId = config.channel
 const port = config.port
 const username = config.username
 
-config.web && username ? web.web(port,username) : logger.info(`No website!`)
+config.web && username ? web.web(port,username,db) : logger.info(`No website!`)
 
 bot.telegram.setMyCommands([
       {
@@ -31,6 +34,7 @@ bot.telegram.setMyCommands([
         description: commands.webPageDescription
       }
 ])
+
 
 // Available in Feature............................................
 
@@ -56,13 +60,14 @@ const defaultLogger = log => {
 }
 
 
-bot.start( xaria =>{
+bot.start( async xaria =>{
   defaultLogger(xaria)
+  await db.put({name: xaria.update.message.from.first_name, username:xaria.update.message.from.username, key: JSON.stringify(xaria.update.message.from.id)})
   xaria.replyWithHTML(`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
 
 I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)
 })
-
+ 
 
 bot.help( xaria =>{
   defaultLogger(xaria)

@@ -10,6 +10,7 @@
 - Simple deployment
 - Fully customisable (If you know code editing)
 - You don't need to add commands manually
+- Managing users using detabase (beta)
 - Beautiful (Bullshit, it sus) webpage with stats(stats coming soon...)
 
 ### Deploy on railway (recommended)
@@ -22,7 +23,7 @@
 
 ### Run locally
 
-- Fork this repo and rename ```./bot/sample.env``` file to ```.env``` and fill ```BOT_TOKEN``` , ```GENIUS``` , ```CHANNEL_ID``` , ```URL``` , ```USERNAME```  and skip  first step.
+- Fork this repo and rename ```./bot/sample.env``` file to ```.env``` and fill ```BOT_TOKEN``` , ```GENIUS``` , ```CHANNEL_ID``` , ```URL``` , ```USERNAME``` , ```DETAKEY```(for database)  and skip  first step.
 - Y you tryin to deploy by ya own . Just deploy it on railway 🚞
 
 #### Without docker
