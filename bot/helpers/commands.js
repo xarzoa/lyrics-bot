@@ -4,9 +4,6 @@ const commands = {
   
   helpDescription: 'Need help?',
   
-  lyrics: 'lyrics',
-  lyricsDescription: 'Find lyrics',
-  
   rickRoll: 'surprise',
   rickRollDescription: 'Like surprises?',
   

@@ -23,10 +23,6 @@ bot.telegram.setMyCommands([
         description: commands.helpDescription
       },
       {
-        command: commands.lyrics,
-        description: commands.lyricsDescription
-      },
-      {
         command: commands.rickRoll,
         description: commands.rickRollDescription
       },
@@ -85,28 +81,27 @@ Join <b> @CatBio </b>
 `)
 })
 
+bot.command(commands.rickRoll, xaria => {
+  xaria.replyWithAnimation('https://tenor.com/bEWOf.gif')
+  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
+})
 
-// sed im too lzy to wrt sm funcs to do tse tngs
+bot.command(commands.webPage, xaria => {
+  xaria.reply(`${config.web ? config.web: 'No Website'}`)
+  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web : 'No Website'}`)
+  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web : 'No Website'}`)
+})
 
-bot.command( commands.lyrics , async xaria => {
-  
+bot.on('message', async xaria =>{
   let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
-  
   logger.info(defaultLogger)
 
   xaria.telegram.sendMessage(channelId , defaultLogger)
-  
-  const msg = xaria.message.text.split(`/${commands.lyrics}`)
-  
-  if(msg[1] == ''){
-    xaria.replyWithHTML(` <b> Error ! </b> You typed nothing!
 
-Type song name after the command.
-
-Eg - <code> /lyrics Dandelions </code>`)
-  }else{
+  if(!xaria.message.text.startsWith('/')){
     try{
-      const searches = await Client.songs.search(msg[1])
+      const searches = await Client.songs.search(xaria.message.text)
       const firstSong = searches[0];
       const lyrics = await firstSong.lyrics();
       
@@ -157,37 +152,8 @@ Eg - <code> /lyrics Dandelions </code>`)
       }
     }
   }
-})
-
-bot.command(commands.rickRoll, xaria => {
-  xaria.replyWithAnimation('https://tenor.com/bEWOf.gif')
-  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
-  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Rickrolled`)
-})
-
-bot.command(commands.webPage, xaria => {
-  xaria.reply(`${config.web ? config.web: 'No Website'}`)
-  xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web : 'No Website'}`)
-  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${config.web ? config.web : 'No Website'}`)
-})
-
-bot.on('sticker', xaria => {
-  
-  xaria.reply(`What are you doing here?
-
-I'm not your girlfriend! This is fuckin bullshit`)
-    xaria.telegram.sendMessage(channelId,`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Sticker`)
-  logger.info(`${xaria.update.message.from.id} ${xaria.update.message.from.first_name} Sticker`)
-})
 
 
-bot.on( 'message' , xaria => {
-  
-  let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
-
-  xaria.telegram.sendMessage(channelId, defaultLogger)
-  logger.info(defaultLogger)
-  
 })
 
 bot.launch()
