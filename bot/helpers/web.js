@@ -10,16 +10,7 @@ const web = (port, username , db) => {
   app.get('/', (req, res) => {
   res.render('index',{invite:"https://t.me/" + username+ "?/lyrics%20Dandelions"})
   })
-
-  app.get('/users/:id', async (req, res) => {
-    const { id } = req.params;
-    const user = await db.get(id);
-    if (user) {
-        res.json(user);
-    } else {
-        res.status(404).json({"message": "user not found"});
-    }
-  });
+  
   app.listen(port)
 }
 
