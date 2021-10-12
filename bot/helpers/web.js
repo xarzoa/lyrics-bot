@@ -6,7 +6,7 @@ const viewPath = path.join(__dirname, './views')
 app.set('views', viewPath);
 app.set('view engine' ,'ejs')
 
-const web = (port, username , db) => {
+const web = (port, username) => {
   app.get('/', (req, res) => {
   res.render('index',{invite:"https://t.me/" + username+ "?/lyrics%20Dandelions"})
   })
