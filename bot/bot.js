@@ -72,10 +72,7 @@ bot.help( xaria =>{
 
 A simple lyrics bot made by using <b>Telegraf and GENIUS</b>
 
-<b><u>Commands </u></b>
-
-<code> /lyrics song name</code> - Find lyrics
-<code> /help </code> - Get this msg
+Send me song name :) I'll search it on genius and If I got any lyrics I'll send it to u :D
 
 Join <b> @CatBio </b>
 `)
@@ -94,6 +91,17 @@ bot.command(commands.webPage, xaria => {
 })
 
 bot.on('message', async xaria =>{
+
+  if(xaria.message.text.startsWith('/')){
+    const cmds = ['help','start', commands.rickRoll , commands.webPage]
+    for(let i = 0 ; i < cmds.length ; i++){
+      if(xaria.message.text !== `/${cmds[i]}`){
+        xaria.reply(`I can't understand what you tryin to say :(`)
+        return;
+      }
+    }
+  }
+
   let defaultLogger = `${xaria.update.message.from.id} ${xaria.update.message.from.first_name} ${xaria.message.text}`
   logger.info(defaultLogger)
 
@@ -106,8 +114,8 @@ bot.on('message', async xaria =>{
       const lyrics = await firstSong.lyrics();
       
       const splitLyrics = async index => {
-        const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
-        await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+      const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
+      await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
 <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
