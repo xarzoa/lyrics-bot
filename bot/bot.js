@@ -110,6 +110,12 @@ bot.on('message', async xaria =>{
   if(!xaria.message.text.startsWith('/')){
     try{
       const searches = await Client.songs.search(xaria.message.text)
+      
+      // Available in future
+      // for(let i = 0 ; i < 5 ; i++ ){
+      //   logger.info(JSON.stringify(searches[i].raw.full_title))
+      // }
+
       const firstSong = searches[0];
       const lyrics = await firstSong.lyrics();
       
