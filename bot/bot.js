@@ -49,9 +49,10 @@ bot.telegram.setMyCommands([
 // })
 
 const defaultLogger = log => {
-  const logTemplate = `${log.update.message.from.id} ${log.update.message.from.first_name} ${log.message.text}`
+  // oh lol console logging looklike shit
+  const logTemplate = `${log.update.message.from.id}  [${log.update.message.from.first_name}](tg://user?id=${log.update.message.from.id})  ${log.message.text}`
   logger.info(logTemplate)
-  log.telegram.sendMessage(channelId, logTemplate)
+  log.telegram.sendMessage(channelId, logTemplate,{parse_mode: 'markdown'})
 }
 
 
