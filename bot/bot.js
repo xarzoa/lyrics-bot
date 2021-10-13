@@ -8,14 +8,15 @@ const web = require('./helpers/web')
 
 const Client = new Genius.Client(config.genius)
 const deta = Deta(config.deta)
+const herokuCaffeine = new HerokuCaffeine({ urls: [config.web] })
 const db = deta.Base("users")
 const bot = new Telegraf(config.bot)
 const channelId = config.channel
 const port = config.port
 const username = config.username
 
+herokuCaffeine.run()
 web.web(port,username,db)
-
 logger.info(`Bot started!`)
 
 bot.telegram.setMyCommands([
