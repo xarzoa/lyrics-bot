@@ -14,7 +14,9 @@ const channelId = config.channel
 const port = config.port
 const username = config.username
 
-config.web && username ? web.web(port,username) : logger.info(`No website!`)
+web.web(port,username)
+
+logger.info(`Bot started!`)
 
 bot.telegram.setMyCommands([
       {
@@ -36,7 +38,7 @@ bot.telegram.setMyCommands([
 ])
 
 
-// Available in Feature............................................
+// Available in Future
 
 // bot.command('helo',xaria =>
 //   xaria.reply('Website',Markup.inlineKeyboard([
@@ -53,7 +55,7 @@ bot.telegram.setMyCommands([
 // })
 
 const defaultLogger = log => {
-  // oh lol console logging looklike shit
+  // oh lol console logging look like shit
   const logTemplate = `${log.update.message.from.id}  [${log.update.message.from.first_name}](tg://user?id=${log.update.message.from.id})  ${log.message.text}`
   logger.info(logTemplate)
   log.telegram.sendMessage(channelId, logTemplate,{parse_mode: 'markdown'})
@@ -65,7 +67,7 @@ bot.start( async xaria =>{
   await db.put({name: xaria.update.message.from.first_name, username:xaria.update.message.from.username, key: JSON.stringify(xaria.update.message.from.id)})
   xaria.replyWithHTML(`Hola! <b><a href='tg://user?id=${xaria.update.message.from.id}'>${xaria.update.message.from.first_name}</a></b> 
 
-I'm ${xaria.botInfo.first_name} a simple<i> Nodejs </i> Lyrics bot.`)
+I'm ${xaria.botInfo.first_name} Lyrics bot. Send me your song name :)`)
 })
  
 
@@ -90,7 +92,7 @@ bot.command(commands.rickRoll, xaria => {
 
 bot.command(commands.webPage, xaria => {
   defaultLogger(xaria)
-  xaria.reply(`${config.web ? config.web: 'No Website'}`)
+  xaria.reply(config.web)
 })
 
 bot.on('message', async xaria =>{

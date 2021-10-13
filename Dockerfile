@@ -10,4 +10,6 @@ COPY . .
 
 ARG EnvironmentVariable
 
+EXPOSE 8080
+
 CMD ["node" , "bot/bot.js"]

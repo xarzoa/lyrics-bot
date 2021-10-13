@@ -29,7 +29,7 @@
 ### Run locally
 
 - Fork this repo and rename ```./bot/sample.env``` file to ```.env``` and fill ```BOT_TOKEN``` , ```GENIUS``` , ```CHANNEL_ID``` , ```URL``` , ```USERNAME``` , ```DETAKEY```(for database)  and skip  first step.
-- Y you tryin to deploy by ya own . Just deploy it on railway 🚞
+- Y you tryin to deploy by ya own . Just deploy it on *heroku* 
 
 #### Without docker
 
