@@ -119,16 +119,16 @@ bot.on('message', async xaria =>{
         const firstSong = searches[0];
         const lyrics = await firstSong.lyrics();
         
-        const splitLyrics = async index => {
+        const splitLyrics = index => {
         const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
-        await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+        xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
   <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
   <code>${ longLyrics[0] } </code>`)
 
 
-        await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
+        xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
         }
 
         if(lyrics.length > 4096){
