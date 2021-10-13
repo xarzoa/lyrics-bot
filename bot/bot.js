@@ -14,7 +14,7 @@ const channelId = config.channel
 const port = config.port
 const username = config.username
 
-web.web(port,username)
+web.web(port,username,db)
 
 logger.info(`Bot started!`)
 
