@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>USERS</title>
+    <meta name="title" content="LyricsBot">
+    <meta name="description" content="A simple lyrics bot written using nodejs with Telegraf library.">
+    <meta name="keywords" content="Nodejs, Lyrics , Genius, Telegram, Open source, Discord, JavaScript">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="2 days">
+    <meta name="author" content="d4rk">
+
+    <!-- Page previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://divrk.github.io/">
+    <meta property="og:title" content="LyricsBot">
+    <meta property="og:description" content="A simple lyrics bot">
+    <meta property="og:image" content="https://divrk.pages.dev/img/lyricsbot.png">
+    
+    
+    <!-- Page previews -->
+    <meta property="twitter:card" conten="summary_large_image">
+    <meta property="twitter:url" content="https://divrk.github.io">
+    <meta property="twitter:title" content="LyricsBot">
+    <meta property="twitter:description" content="A simple lyrics bot">
+    <meta property="twitter:image" content="https://divrk.pages.dev/img/lyricsbot.png">
+    
+    <!-- Analytics -->
+    <script async defer data-website-id="370fdbb8-7753-4f10-a56b-4cbaca290156" src="https://stats.coded.top/umami.js"></script>
+
+    <style type="text/css" media="all">
+        body{-webkit-user-select: none;-webkit-touch-callout: none;-webkit-tap-highlight-color: none;font-family: monospace;height: 100vh;flex-direction: column}body, .wrapper{display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}.cpy{color:#525252;-webkit-tap-highlight-color: transparent; -webkit-touch-callout: none;-webkit-user-select: none;}::selection{background-size:white;color:black;}
+      </style>
+</head>
+    
+<body>
+      
+      <div class="wrapper">
+        <h2><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="skyblue" class="bi bi-music-note-list" viewBox="0 0 16 16"><path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/><path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/><path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/><path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/></svg>LyricsBot</h2>
+      </div>
+      
+      <div class="users">
+          <h2>Hola! <%= info.name %>, We have this details bout u!</h2>
+          <br>
+          <h3>NAME : <%= info.name %></h3>
+          <h3>ID : <%= info.key %></h3>
+          <h3> USERNAME : <a class="cpy" href='https://<%= info.username ? `t.me/${info.username}` : "http.cat/404" %>' target="_blank" rel="noopener noreferrer"><%= info.username ? info.username : "You don't have USERNAME" %></a></h3>
+      </div>
+
+      <div>
+        <a class="cpy" href="https://d4rk.bio.link">@d4rk</a>
+</body>
+</html>
