@@ -34,6 +34,10 @@ bot.telegram.setMyCommands([
       {
         command: commands.webPage,
         description: commands.webPageDescription
+      },
+      {
+        command: commands.aboutMe,
+        description: commands.aboutMeDescription
       }
 ])
 
@@ -95,12 +99,17 @@ bot.command(commands.webPage, xaria => {
   xaria.reply(config.web)
 })
 
+bot.command(commands.aboutMe , xaria => {
+  defaultLogger(xaria)
+  xaria.reply(`${config.web}/${xaria.update.message.from.id}`)
+})
+
 bot.on('message', async xaria =>{
   defaultLogger(xaria)
   if(xaria.message.text){
 
     if(xaria.message.text.startsWith('/')){
-      const cmds = ['help','start', commands.rickRoll , commands.webPage]
+      const cmds = ['help','start', commands.rickRoll , commands.webPage , commands.aboutMe]
       for(let i = 0 ; i < cmds.length ; i++){
         if(xaria.message.text !== `/${cmds[i]}`){
           xaria.reply(`I can't understand what you tryin to say :(`)

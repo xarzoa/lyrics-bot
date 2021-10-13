@@ -8,7 +8,10 @@ const commands = {
   rickRollDescription: 'Like surprises?',
   
   webPage: 'website',
-  webPageDescription: 'Website'
+  webPageDescription: 'Website',
+
+  aboutMe: 'me',
+  aboutMeDescription: 'What I know about you?'
   
 }
 
