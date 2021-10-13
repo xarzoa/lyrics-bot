@@ -1,6 +1,7 @@
 const { Telegraf , Markup } = require('telegraf')
 const Genius = require('genius-lyrics')
 const { Deta } = require('deta')
+const HerokuCaffeine = require('heroku-caffeine')
 const commands = require('./helpers/commands')
 const logger = require('./helpers/logger')
 const config = require('./config')
