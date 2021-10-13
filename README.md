@@ -4,18 +4,23 @@
 
 ### Features
 
-- Powerful logging on channel and console
 - Based on Genius API ( World's biggest lyrics site )
 - Simple and Fast 
 - Simple deployment
 - Fully customisable (If you know code editing)
-- You don't need to add commands manually
-- Managing users using detabase (beta)
-- Beautiful (Bullshit, it sus) webpage with stats(stats coming soon...)
 
-### Deploy on railway (recommended)
+### ToDo
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fdivrk%2FLyricsBot&envs=BOT_TOKEN%2CGENIUS%2CCHANNEL_ID%2CURL%2CUSERNAME%2CPORT&optionalEnvs=URL%2CUSERNAME&BOT_TOKENDesc=Telegram+bot+token+%28%40BotFather%29&GENIUSDesc=Genius+client+secret+%2C+ID+idk+%F0%9F%A4%B7+%28+https%3A%2F%2Fgenius.com%29&CHANNEL_IDDesc=Log+channel+ID&URLDesc=railway+app+url+or+ip+address+of+your+vps+or+your+added+custom+domain.+%23+Optional+%28If+you+need+website.+Fill+this+%29&USERNAMEDesc=Username+of+your+bot,+if+you+need+website+you+must+fill+this+too&PORTDesc=Don%27t+change+this&PORTDefault=3000&referralCode=d4rk)
+[x] Database support
+[x] Automatic Commands
+[x] Logging system on Telegram channel
+[] Web page with user stats
+[] Blacklist
+[] Youtube and Spotify(Song url)
+[] Error loggin system
+[] Random welcome message
+[] Search results
+
 
 ### Deploy on heroku 🤷🏻 ( Everyone's choice )
 
@@ -76,11 +81,11 @@ sudo docker run lyricsbot
 ```
 ### Thanks
 
-- Telegraf
-- Me (Crying noob)
-- My brain ( Bruh )
-- Replit
-- Rick Astley ( to be part of my bot )
+- [Telegraf](https://telegraf.js.org)
+- Me and ma brain (Crying noob)
+- [Deta.sh](https://deta.sh)
+- [genius-lyrics(module)](https://www.npmjs.com/package/genius-lyrics)
+- [Rick Astley ( to be part of my bot )](https://youtu.be/dQw4w9WgXcQ)
 - You ( for ur star )
 
 
