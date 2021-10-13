@@ -11,15 +11,15 @@
 
 ### ToDo
 
-[x] Database support
-[x] Automatic Commands
-[x] Logging system on Telegram channel
-[] Web page with user stats
-[] Blacklist
-[] Youtube and Spotify(Song url)
-[] Error loggin system
-[] Random welcome message
-[] Search results
+- [x] Database support
+- [x] Automatic Commands
+- [x] Logging system on Telegram channel
+- [ ] Web page with user stats
+- [ ] Blacklist
+- [ ] Youtube and Spotify(Song url)
+- [ ] Error loggin system
+- [ ] Random welcome message
+- [ ] Search results
 
 
 ### Deploy on heroku 🤷🏻 ( Everyone's choice )
