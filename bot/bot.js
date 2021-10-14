@@ -1,7 +1,6 @@
 const { Telegraf , Markup } = require('telegraf')
 const Genius = require('genius-lyrics')
 const { Deta } = require('deta')
-const HerokuCaffeine = require('heroku-caffeine')
 const commands = require('./helpers/commands')
 const logger = require('./helpers/logger')
 const config = require('./config')
@@ -9,14 +8,12 @@ const web = require('./helpers/web')
 
 const Client = new Genius.Client(config.genius)
 const deta = Deta(config.deta)
-const herokuCaffeine = new HerokuCaffeine({ urls: [config.web] })
 const db = deta.Base("users")
 const bot = new Telegraf(config.bot)
 const channelId = config.channel
 const port = config.port
 const username = config.username
 
-herokuCaffeine.run()
 web.web(port,username,db)
 logger.info(`Bot started!`)
 
@@ -78,7 +75,6 @@ I'm ${xaria.botInfo.first_name} Lyrics bot. Send me your song name :)`)
  
 
 bot.help( xaria =>{
-  await db.put({name: xaria.update.message.from.first_name, username:xaria.update.message.from.username, key: JSON.stringify(xaria.update.message.from.id)})
   defaultLogger(xaria)
   xaria.replyWithHTML(`I'm <b>${xaria.botInfo.first_name}</b>
 
@@ -92,7 +88,6 @@ Join <b> @CatBio </b>
 
 
 bot.command(commands.rickRoll, xaria => {
-  await db.put({name: xaria.update.message.from.first_name, username:xaria.update.message.from.username, key: JSON.stringify(xaria.update.message.from.id)})
   defaultLogger(xaria)
   xaria.replyWithAnimation('https://tenor.com/bEWOf.gif')
 })
@@ -109,6 +104,7 @@ bot.command(commands.aboutMe , xaria => {
 })
 
 bot.on('message', async xaria =>{
+  await db.put({name: xaria.update.message.from.first_name, username:xaria.update.message.from.username, key: JSON.stringify(xaria.update.message.from.id)})
   defaultLogger(xaria)
   if(xaria.message.text){
 
@@ -137,13 +133,13 @@ bot.on('message', async xaria =>{
         const splitLyrics = async index => {
           try{
             const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
-            xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+            await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
 <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
 <code>${ longLyrics[0] } </code>`)
 
-            xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
+            await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
           }catch(err){
             xaria.reply(err)
           }
