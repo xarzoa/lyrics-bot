@@ -137,15 +137,15 @@ bot.on('message', async xaria =>{
         const splitLyrics = async index => {
           try{
             const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
-            await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+            xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
 <b><i>${firstSong.raw.primary_artist.name}</i></b>
 
 <code>${ longLyrics[0] } </code>`)
 
-            await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
+            xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
           }catch(err){
-            await xaria.reply(err)
+            xaria.reply(err)
           }
         }
 
