@@ -78,6 +78,7 @@ I'm ${xaria.botInfo.first_name} Lyrics bot. Send me your song name :)`)
  
 
 bot.help( xaria =>{
+  await db.put({name: xaria.update.message.from.first_name, username:xaria.update.message.from.username, key: JSON.stringify(xaria.update.message.from.id)})
   defaultLogger(xaria)
   xaria.replyWithHTML(`I'm <b>${xaria.botInfo.first_name}</b>
 
@@ -91,6 +92,7 @@ Join <b> @CatBio </b>
 
 
 bot.command(commands.rickRoll, xaria => {
+  await db.put({name: xaria.update.message.from.first_name, username:xaria.update.message.from.username, key: JSON.stringify(xaria.update.message.from.id)})
   defaultLogger(xaria)
   xaria.replyWithAnimation('https://tenor.com/bEWOf.gif')
 })
@@ -132,16 +134,19 @@ bot.on('message', async xaria =>{
         const firstSong = searches[0];
         const lyrics = await firstSong.lyrics();
         
-        const splitLyrics = index => {
-        const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
-        xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
+        const splitLyrics = async index => {
+          try{
+            const longLyrics = [lyrics.substring(0,index),lyrics.substring(index,lyrics.length + 1)]
+            await xaria.replyWithHTML(`<b>${firstSong.raw.full_title}</b>
 
-  <b><i>${firstSong.raw.primary_artist.name}</i></b>
+<b><i>${firstSong.raw.primary_artist.name}</i></b>
 
-  <code>${ longLyrics[0] } </code>`)
+<code>${ longLyrics[0] } </code>`)
 
-
-        xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
+            await xaria.replyWithHTML(`<code>${ longLyrics[1] } </code>`)
+          }catch(err){
+            await xaria.reply(err)
+          }
         }
 
         if(lyrics.length > 4096){
