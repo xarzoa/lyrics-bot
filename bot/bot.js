@@ -6,13 +6,12 @@ const logger = require('./helpers/logger')
 const config = require('./config')
 const web = require('./helpers/web')
 
-const Client = new Genius.Client(config.genius)
+const { genius, channel:channelId, port, username, bot } = config
+
+const Client = new Genius.Client(genius)
 const deta = Deta(config.deta)
 const db = deta.Base("users")
-const bot = new Telegraf(config.bot)
-const channelId = config.channel
-const port = config.port
-const username = config.username
+const bot = new Telegraf(bot)
 
 web.web(port,username,db)
 logger.info(`Bot started!`)
@@ -185,5 +184,4 @@ bot.launch()
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
 
-// Reading respect ++
-// btw don't steal ma code! mom ... he/she stole ma code :( 
+// Copy pasting make you copy-paster not a dev :( 
