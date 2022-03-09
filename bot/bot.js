@@ -6,12 +6,12 @@ const logger = require('./helpers/logger')
 const config = require('./config')
 const web = require('./helpers/web')
 
-const { genius, channel:channelId, port, username, bot } = config
+const { genius, channel:channelId, port, username, bot:Token } = config
 
 const Client = new Genius.Client(genius)
 const deta = Deta(config.deta)
 const db = deta.Base("users")
-const bot = new Telegraf(bot)
+const bot = new Telegraf(Token)
 
 web.web(port,username,db)
 logger.info(`Bot started!`)
