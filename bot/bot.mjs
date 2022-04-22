@@ -47,11 +47,11 @@ bot.command('help', (x) => {
 });
 
 bot.on('message:text', async (x) => {
-  bot.api.setChatAction(x.msg.chat.id, 'typing');
+  bot.api.sendChatAction(x.msg.chat.id, 'typing');
   let term = x.msg.text;
   await songlyrics.default(term).then((song) => {
     const keyBoard = new InlineKeyboard().url(
-      `song.source.name`,
+      song.source.name,
       song.source.link
     );
     x.reply(`<code>${song.lyrics}</code>`, {
