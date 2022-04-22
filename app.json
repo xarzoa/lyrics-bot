@@ -16,26 +16,6 @@
     "env":{
         "BOT_TOKEN":{
             "description":"Telegram bot token from @botfather"
-        },
-        "GENIUS":{
-            "description":"Genius token/client id idk 🤷 whatever just paste something"
-        },
-        "CHANNEL_ID":{
-            "description":"Telegram log channel ID"
-        },
-        "DETAKEY":{
-            "description":"Deta project key from deta.sh"
-        },
-        "USERNAME":{
-            "description":"Telegram bot's username"
-        },
-        "URL":{
-            "description":"heroku app url ( https://yourapp.herokuapp.com )",
-            "value":"https://yourapp.herokuapp.com"
-        },
-        "PORT":{
-            "description":"Don't change this value",
-            "value":"8080"
         }
     }
 }
