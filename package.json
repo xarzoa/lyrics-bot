@@ -2,22 +2,19 @@
   "name": "telegram-lyrics-bot",
   "version": "2.5.3",
   "description": "A simple telegram lyrics bot",
-  "main": "bot/bot.js",
+  "main": "bot/bot.mjs",
   "scripts": {
-    "start": "nodemon bot/bot.js"
+    "start": "nodemon bot/bot.mjs"
   },
   "keywords": [],
   "author": "d4rk",
   "license": "MIT",
   "dependencies": {
-    "deta": "^1.0.1",
     "dotenv": "^10.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "genius-lyrics": "^4.2.9",
-    "heroku-caffeine":"^1.4.1",
-    "nodemon":"^2.0.13",
-    "telegraf": "^4.4.2",
+    "grammy": "^1.8.0",
+    "heroku-caffeine": "^1.4.1",
+    "nodemon": "^2.0.13",
+    "songlyrics": "^2.2.4",
     "winston": "^3.3.3"
   }
 }
